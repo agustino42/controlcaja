@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sistema de Inventario</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+
+
+
+    <body>
+       <div class="container" id="top">
+        <aside class="sidebar-wrapper">
+            <div class="sidebar-header">
+                <img src="logo-urano.png" alt="logo" >
+
+                <a href="/index.html">
+                    
+                    <h4>Sistema de Inventario</h4>
+                </a>
+
+             <div class="close-menu">
+                <i class="fas -fa-cheveron-left"></i>
+             </div>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="sistema-inventario.html">
+                            <i class="fas fa-home"></i>
+                            <div class="title">Apertura de Caja</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-users"></i>
+                            <div class="title">Cuentas Admin</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-headset"></i>
+                            <div class="title">Facturas</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-tasks"></i>
+                            <div class="title">Productos/Inventario</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shopping-bag"></i>
+                            <div class="title">Transferencias/Proveedores</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-user-circle"></i>
+                            <div class="title">Tablero Control Cajeros</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-question-circle"></i>
+                            <div class="title">Reportes De Ventas</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+<main class="content">
+    <header>
+<div class="header-wrapper">
+    <div class="header-left">
+
+        <div class="toggle-icon">
+        <i class="fas fa-bars"></i>
+        </div>
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Buscar...." >
+    </div>
+    <!--<div class="header-right">
+        <div class="star-container">
+            <div class="star-left">
+           <i class="far fa-star"></i>
+           <span></span>
+            </div>
+            <div class="star-right">
+                3254
+            </div>
+        </div>
+        <img src="logo-urano.png" alt="avatar">
+    </div> -->
+</div>
+    </header>
+    <!--CAJAS SECCION MMGb-->
+    <section class="main">
+        <div class="box box-1">
+            <div class="box-left">
+                <h4>Bienvenidos</h4>
+                <p>Has Obtenido un 72% de Incremento de Ventas</p>
+                <a href="#">Ver Historial</a>
+            </div>
+            <div class="box-right">
+                <img src="logo-urano.png" alt="perfil">
+            </div>
+        </div>
+       
+        <div class="box box-2">
+            <div class="box-details">
+                <h4>Proveedores</h4>
+             <span>Total Pago Proveedores</span>
+             <h4>Deuda por Pagar = 450$ - 100$</h4>
+             
+            </div>
+            <div class="box-icon">
+                <i class="fas fa-users"></i></div>
+    
+        </div>
+        
+        <div class="box box-3">
+            <div class="box-details">
+                <h4>Inventario</h4>
+             <span>Total Productos</span>
+             <h4>146 Productos Activos en el Almacen</h4>
+            </div>
+            <div class="box-icon">
+                <i class="fas fa-tasks"></i></div>
+    
+        </div>
+        <div class="box box-4">
+            <div class="box-details">
+                <h4>Ganancias </h4>
+             <span>Promedio del Dia</span>
+             <h4>Total Ganancias: 1540$ - 2000$ </h4>
+            </div>
+            <div class="box-icon">
+                <i class="fas fa-shopping-bag"></i></div>
+    
+        </div>
+        <div class="box box-5">
+            <div class="box-details">
+                <h4>Caja Apertura</h4>
+             <span></span>
+             <h4>Total en Caja: = 50$</h4>
+            </div>
+            <div class="box-icon">
+                <i class="fas fa-wallet"></i></div>
+    
+        </div>
+        <div class="box box-6">
+            <div class="box-header">
+                <h4>Ventas Online</h4>
+                <a href="#">Mostrar Historial</a>
+            </div>
+            <div class="box-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Productos</th>
+                            <th>Codigo</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>fecha</th>
+                            <th>Vendidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--1-->
+                        <tr>
+                            <td>Harina Pan 1Kg</td>
+                            <td>#4578163</td>
+                            <td>
+                                <span class="badge badge-1">45/Bultos</span>
+                            </td>
+                            <td>$12</td>
+                            <td> 04 Abril 2034 </td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar bar-1" style="width: 100%;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                       <!--2-->
+                       <tr>
+                        <td>Harina Pan 1Kg</td>
+                        <td>#4578163</td>
+                        <td>
+                            <span class="badge badge-2">45/Bultos</span>
+                        </td>
+                        <td>$12</td>
+                        <td> 12 mayo 2010 </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar bar-2" style="width: 20%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <!--3-->
+                    <tr>
+                        <td>Harina Pan 1Kg</td>
+                        <td>#4578163</td>
+                        <td>
+                            <span class="badge badge-3">10/Bultos</span>
+                        </td>
+                        <td>$12</td>
+                        <td> 10 agosto 2010 </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar bar-3" style="width: 40%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!--4-->
+                    <tr>
+                        <td>Harina Pan 1Kg</td>
+                        <td>#4578163</td>
+                        <td>
+                            <span class="badge badge-4">10/Bultos</span>
+                        </td>
+                        <td>$12</td>
+                        <td> 11 enero 2015 </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar bar-4" style="width: 60%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!--5-->
+
+                    <tr>
+                        <td>Harina Pan 1Kg</td>
+                        <td>#4578163</td>
+                        <td>
+                            <span class="badge badge-5">45/bultos</span>
+                        </td>
+                        <td>$12</td>
+                        <td> 09 febrero 2019 </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar bar-5" style="width: 70%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="box box-7">
+            <div class="box-header">
+                <h4>Nuevos Proveedores</h4>
+                <a href="#">Ver Todos</a>
+            </div>
+            <!--Proveedor 1-->
+            <div class="box-container">
+                <div class="customer">
+                <img src="logo-urano.png" alt="avatar">
+                  <div class="info">
+                  <h5>Comercializador Barinas 2015 CA</h5>
+                   </div>
+                   <div class="contacts">
+                    <i class="fas fa-user-circle"></i>
+                    <i class="far fa-comment-alt"></i>
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+
+               </div>
+               <!--proveedor 2-->
+               <div class="customer">
+                <img src="logo-urano.png" alt="avatar">
+                  <div class="info">
+                  <h5>Comercializador Barinas 2015 CA</h5>
+                   </div>
+                   <div class="contacts">
+                    <i class="fas fa-user-circle"></i>
+                    <i class="far fa-comment-alt"></i>
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+
+               </div>
+               <!--proveedor 3-->
+               <div class="customer">
+                <img src="logo-urano.png" alt="avatar">
+                  <div class="info">
+                  <h5>Comercializador Barinas 2015 CA</h5>
+                   </div>
+                   <div class="contacts">
+                    <i class="fas fa-user-circle"></i>
+                    <i class="far fa-comment-alt"></i>
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+
+               </div>
+               <!--proveedor 4-->
+               <div class="customer">
+                <img src="logo-urano.png" alt="avatar">
+                  <div class="info">
+                  <h5>Comercializador Barinas 2015 CA</h5>
+                   </div>
+                   <div class="contacts">
+                    <i class="fas fa-user-circle"></i>
+                    <i class="far fa-comment-alt"></i>
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+
+               </div>
+               <!--proveedor 6-->
+               <div class="customer">
+                <img src="logo-urano.png" alt="avatar">
+                  <div class="info">
+                  <h5>Comercializador Barinas 2015 CA</h5>
+                   </div>
+                   <div class="contacts">
+                    <i class="fas fa-user-circle"></i>
+                    <i class="far fa-comment-alt"></i>
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+
+               </div>
+            </div>
+        </div>
+        <div class="box box-8">
+            <div class="box-left">
+                <h4>Procentaje de Ventas</h4>
+                <span class="year">Año 2015</span>
+                <span class="percentage">^68.2%</span>
+                
+                <h3>$84.698K</h3>
+            </div>
+            <div class="box-right">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        </div>
+        <!--porcentaje de ventas 1-->
+        <div class="box box-8">
+            <div class="box-left">
+                <h4>Ganancias </h4>
+                <span class="year">Año 2018</span>
+                <span class="percentage">^78.2%</span>
+                
+                <h3>$84.698K</h3>
+            </div>
+            <div class="box-right">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        </div>
+        <!--Puntos de venta-->
+        <div class="box box-9">
+            <div class="box-header">
+                <h4>Transacciones</h4>
+            </div>
+            <div class="circle">
+                <div class="inner-circle">Reporte</div>
+            </div>
+            <div class="box-bottom">
+                <div class="list">
+                    <span>Total Puntos-Ventas</span>
+                    <span> 54$</span>
+                </div>
+                <div class="list">
+                    <span>Total Pagos-Moviles</span>
+                    <span> 44$</span>
+                </div>
+                <div class="list">
+                    <span>Total Transferencias</span>
+                    <span> 13$</span>
+                </div>
+                <div class="list">
+                    <span>Total Dolares Recibidos</span>
+                    <span> 48$</span>
+                </div>
+            </div>
+        </div>
+        <div class="box box-10">
+            <div class="box-header">
+                <h4>Historial de Cajeros</h4>
+            </div>
+            <div class="box-body">
+                <div class="project">
+                    <div class="project-left">
+                        <h5>Cajero 1</h5>
+                        <span>Juan Perez</span>
+                    </div>
+                    <div class="project-right">
+                        <i class="far fa-eye"></i>
+                    </div>
+                </div>
+                <!--Cajero 2-->
+                <div class="project">
+                    <div class="project-left">
+                        <h5>Cajero 2</h5>
+                        <span>Juan Perez</span>
+                    </div>
+                    <div class="project-right">
+                        <i class="far fa-eye"></i>
+                    </div>
+                </div>
+                <!--cajero 3-->
+                <div class="project">
+                    <div class="project-left">
+                        <h5>Cajero 3</h5>
+                        <span>Juan Perez</span>
+                    </div>
+                    <div class="project-right">
+                        <i class="far fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer>
+    <div class="copyright">
+        URANO Sistema de invetario &copy; 2023.Todos los Derechos Reservados. 
+    </div>
+</footer>
+</main>   
+       </div>
+
+       <div class="switcher-container">
+        <div class="switcher-icon">
+            <i class="fas fa-cog"></i>
+        </div>
+        <div class="switcher-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="switcher-header">
+            <h3>Cambiar Tema</h3>
+            <h4>Cambiar estilos</h4>
+        </div>
+        <div class="switcher-body">
+            <ul>
+                <li class="active" data-color="#f7f7f7"></li>
+                <li data-color="#212529"></li>
+            </ul>
+        </div>
+       </div> 
+
+       <a href="#top" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+       </a>
+
+        <script src="main.js" ></script>
+
+    </body>
+</html>
