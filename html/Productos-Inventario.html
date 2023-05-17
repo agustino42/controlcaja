@@ -8,123 +8,244 @@
         <title>Sistema de Inventario</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     </head>
 
 
 
-    <body>
+    <body >
        <div class="container" id="top">
-        <aside class="sidebar-wrapper">
-            <div class="sidebar-header">
-                <img src="logo-urano.png" alt="logo" >
+            <aside class="sidebar-wrapper">
+                <div class="sidebar-header">
+                    <img src="/img/logo3.png" alt="logo" >
+                    <a href="/index.html">
 
-                <a href="/index.html">
                     
-                    <h4>Sistema de Inventario</h4>
-                </a>
+                        <h4>Sistema de Inventario</h4>
+                    </a>
+                    <div class="close-menu">
+                        <i class="fas -fa-cheveron-left"></i>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="AperturaCaja.html">
+                                <i class="fas fa-home"></i>
+                                <div class="title">Apertura de Caja</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-users"></i>
+                                <div class="title">Cuentas Admin</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="html/Facturas.html">
+                                <i class="fas fa-headset"></i>
+                                <div class="title">Facturas</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="html/Productos-Inventario.html">
+                                <i class="fas fa-tasks"></i>
+                                <div class="title">Inventario</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="html/Transferencias-Proveedores.html">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="title">Proveedores</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="html/TableroCajeros.html">
+                                <i class="far fa-user-circle"></i>
+                                <div class="title">Control de Cajeros</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="html/Reportes-Ventas.html">
+                                <i class="far fa-question-circle"></i>
+                                <div class="title">Reportes De Ventas</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://urano-itech.vercel.app/">
+                                <i class="fa fa-code" aria-hidden="true"></i>
+                                <div class="title">Urano iTech</div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <!DOCTYPE html>
 
-             <div class="close-menu">
-                <i class="fas -fa-cheveron-left"></i>
-             </div>
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-archive"></i>
-                            <div class="title">Sistema De invetario</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-accessible-icon "></i>
-                            <div class="title">Agregar Productos</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-headset"></i>
-                            <div class="title">Proveedores</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-tasks"></i>
-                            <div class="title">Imprimir reportes</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-shopping-bag"></i>
-                            <div class="title">Control de Calidad</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="far fa-user-circle"></i>
-                            <div class="title">Informe</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="far fa-question-circle"></i>
-                            <div class="title">Productos mas Vendidos</div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-<main class="content">
-    <header>
-<div class="header-wrapper">
-    <div class="header-left">
 
-        <div class="toggle-icon">
-        <i class="fas fa-bars"></i>
+            <html>
+                <head>
+                    <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <title>Sistema de Inventario</title>
+                    <meta name="description" content="">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel="stylesheet" href="../styles.css">
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            
+                </head>
+            
+            
+            
+                <body >
+                   <div class="container" id="top">
+                        <aside class="sidebar-wrapper">
+                            <div class="sidebar-header">
+                                <img src="/img/logo3.png" alt="logo" >
+                                <a href="/index.html">
+            
+                                
+                                    <h4>Sistema de Inventario</h4>
+                                </a>
+                                <div class="close-menu">
+                                    <i class="fas -fa-cheveron-left"></i>
+                                </div>
+                            </div>
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a href="AperturaCaja.html">
+                                            <i class="fas fa-home"></i>
+                                            <div class="title">Apertura de Caja</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-users"></i>
+                                            <div class="title">Cuentas Admin</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="html/Facturas.html">
+                                            <i class="fas fa-headset"></i>
+                                            <div class="title">Facturas</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="html/Productos-Inventario.html">
+                                            <i class="fas fa-tasks"></i>
+                                            <div class="title">Inventario</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="html/Transferencias-Proveedores.html">
+                                            <i class="fas fa-shopping-bag"></i>
+                                            <div class="title">Proveedores</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="html/TableroCajeros.html">
+                                            <i class="far fa-user-circle"></i>
+                                            <div class="title">Control de Cajeros</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="html/Reportes-Ventas.html">
+                                            <i class="far fa-question-circle"></i>
+                                            <div class="title">Reportes De Ventas</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://urano-itech.vercel.app/">
+                                            <i class="fa fa-code" aria-hidden="true"></i>
+                                            <div class="title">Urano iTech</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <main class="content">
+                            <header>
+                                <div class="header-wrapper">
+                                    <div class="header-left">
+                                        <div class="toggle-icon">
+                                            <i class="fas fa-bars"></i>
+                                        </div>
+                                        <i class="fas fa-search"></i>
+                                        <input type="text" placeholder="Buscar...." >
+                                    </div>
+            
+                            
+                                </div>
+                            </header>
+                            <!--CAJAS SECCION DASHBOARD-->
+            
+                            <section class="main">
+                                <div class="box box-1">
+                                    <div class="box-left">
+                                        <h4>Sistema de Facturacion</h4>
+                                        <p> Sistema de Ordenes de Facturaccion.</p>
+                                        <a href="#">Nueva</a>
+                                    </div>
+            
+                                </div>
+                            
+            
+                               
+            
+            
+            
+                            </section>
+                        
+
+            
+                            <footer >
+                                <div class="copyright">
+                                    @Urano iTech &copy; 2023. Todos los Derechos Reservados. 
+                                    <a href="https://urano-itech.vercel.app/" style="color: rgb(15, 15, 15);">Visita nuestro sitio web</a>
+                                </div>
+                                </br></br></br>
+                            </footer>
+                            </br>
+                        </main>   
+                    </div>
+            
+            
+                
+                    <a href="#top" class="scroll-top">
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
+            
+                    <script src="main.js" ></script>
+                    <script src="bello.js" ></script>
+                    <script src="script.js" ></script>
+            
+                    
+                </body>
+            </html>   
         </div>
-        <i class="fas fa-search"></i>
-        <input type="text" placeholder="Buscar...." >
-    </div>
-    <!--<div class="header-right">
-        <div class="star-container">
-            <div class="star-left">
-           <i class="far fa-star"></i>
-           <span></span>
-            </div>
-            <div class="star-right">
-                3254
-            </div>
-        </div>
-        <img src="logo-urano.png" alt="avatar">
-    </div> -->
-</div>
-    </header>
 
-    <!-- aqui se ve el pantalla principal-->
+
     
-    <section class="main">
-        <div class="box box-">
-            <div class="box-left">
-                <h4>Bienvenidos</h4>
-                <p>Sistema de Invetario</p>
-                <a href="#">Ver Historial</a>
-            </div>
-            <div class="box-right">
-                <img src="logo-urano.png" alt="perfil">
-            </div>
-        </div>
-    </section>
-</main>
-       
-          
-       </div>
-        
-        <script src="main.js" ></script>
+        <a href="#top" class="scroll-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
 
+        <script src="main.js" ></script>
+        <script src="bello.js" ></script>
+        <script src="script.js" ></script>
+
+        
     </body>
+
+
+
 </html>
