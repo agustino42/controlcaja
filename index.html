@@ -75,6 +75,12 @@
                                 <div class="title">Reportes De Ventas</div>
                             </a>
                         </li>
+                        <li>
+                            <a href="#">
+                                <i class="far fa-question-circle"></i>
+                                <div class="title">Dark Mode</div>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </aside>
@@ -432,7 +438,7 @@
             </main>   
         </div>
 
-        <div class="switcher-container">
+        <!-- <div class="switcher-container">
             <div class="switcher-icon">
               <i class="fas fa-cog"></i>
             </div>
@@ -448,48 +454,15 @@
                 <li class="active" data-color="#f7f7f7"></li>
                 <li data-color="#212529"></li>
               </ul>
-            </div>
+            </div> -->
         </div>
         <a href="#top" class="scroll-top">
             <i class="fas fa-arrow-up"></i>
         </a>
 
         <script src="main.js" ></script>
-        <script>
-            // Obtener referencia a los elementos del DOM
-            const switcherContainer = document.querySelector('.switcher-container');
-            const switcherIcons = document.querySelectorAll('.switcher-icon');
-            const switcherClose = document.querySelector('.switcher-close');
-            const themeItems = document.querySelectorAll('.switcher-body li');
-          
-            // Manejador de eventos para abrir/cerrar el selector de temas
-            switcherIcons.forEach(icon => {
-              icon.addEventListener('click', () => {
-                switcherContainer.classList.toggle('open');
-              });
-            });
-          
-            switcherClose.addEventListener('click', () => {
-              switcherContainer.classList.remove('open');
-            });
-          
-            // Manejador de eventos para cambiar el tema al hacer clic en los elementos de la lista
-            themeItems.forEach(item => {
-              item.addEventListener('click', () => {
-                // Obtener el color del atributo data-color
-                const color = item.getAttribute('data-color');
-          
-                // Aplicar el color como estilo de fondo
-                document.body.style.backgroundColor = color;
-          
-                // Marcar el elemento activo
-                themeItems.forEach(themeItem => {
-                  themeItem.classList.remove('active');
-                });
-                item.classList.add('active');
-              });
-            });
-        </script>
-
+        <script src="bello.js" ></script>
+        <script src="script.js" ></script>
+        
     </body>
 </html>
