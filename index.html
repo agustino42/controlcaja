@@ -13,11 +13,12 @@
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     </head>
 
 
 
-    <body>
+    <body >
        <div class="container" id="top">
             <aside class="sidebar-wrapper">
                 <div class="sidebar-header">
@@ -76,9 +77,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="far fa-question-circle"></i>
-                                <div class="title">Dark Mode</div>
+                            <a >href="https://urano-itech.vercel.app/">
+                                <i class="fa fa-code" aria-hidden="true"></i>
+                                <div class="title">Urano iTech</div>
                             </a>
                         </li>
                     </ul>
@@ -463,6 +464,14 @@
         <script src="main.js" ></script>
         <script src="bello.js" ></script>
         <script src="script.js" ></script>
+        <script>
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+    
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+            });
+        </script>
         
     </body>
 </html>
