@@ -108,123 +108,130 @@
                 <head>
                      <title>Caja del Negocio</title>
                     <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f2f2f2;
-                margin: 0;
-                padding: 20px;
-            }
+           .cajero {
+            padding: 1.5rem;
+        background-color: var(--whiteColor);
+        border-radius: var(--smallBorder);
+        box-shadow: 0 .2rem .6rem 0 rgba(67 89 113 / .12);
+}
 
-            h1 {
-                color: #333;
-                text-align: center;
-            }
+.display {
+  margin-bottom: 10px;
+}
 
-            table {
-                width: 100%;
-                margin-bottom: 20px;
-                background-color: #fff;
-                border-collapse: collapse;
-                color: #333;
-            }
+.numero {
+  width: 60px;
+  height: 40px;
+  margin: 5px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-            th,
-            td {
-                padding: 10px;
-                border-bottom: 1px solid #ddd;
-                text-align: left;
-            }
+.operacion {
+  width: 60px;
+  height: 40px;
+  margin: 5px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.h1C {
+    color: #f44336;
+    font-size: 1.9rem;
+}
+.accion {
+  width: 120px;
+  height: 40px;
+  margin: 5px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
 
-            th {
-                background-color: #4CAF50;
-                color: #fff;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
+/* Otros estilos para personalizar la apariencia del cajero */
 
-            td:last-child {
-                text-align: right;
-            }
 
-            tbody tr:nth-child(even) {
-                background-color: #f9f9f9;
-            }
+/* Otros estilos para personalizar la apariencia del cajero */
 
-            tbody tr:hover {
-                background-color: #f5f5f5;
-                transition: background-color 0.3s;
-            }
-
-            #total {
-                text-align: right;
-                font-weight: bold;
-                margin-bottom: 20px;
-                font-size: 18px;
-                color: #4CAF50;
-            }
-
-            .button {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #808000;
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                font-size: 16px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
-
-            .button:hover {
-                background-color: #45a049;
-            }
                     </style>
                 </head>
                 <body>
-                    <h1>Caja del Negocio</h1>
-                    <table id="tabla-compras">
-            <tr>
-                <th>Nombre del Producto</th>
-                <th>Precio del Producto</th>
-                <th>Cantidad del Producto</th>
-            </tr>
-            <!-- Aquí se irán agregando las filas de compras -->
-                    </table>
-                    <div id="total">Total de Compra: $0.00</div>
+                    <div class="cajero">
+                      <h1 class="h1C" >Cajero POS</h1>
+                      <div class="display">
+                       
+                      </div>
+                      <table id="tablaProductos">
+                        <thead>
+                          <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Aquí se agregarán las filas de los productos -->
+                        </tbody>
+                      </table>
+                    
+                      <div class="acciones">
+                        <button class="accion" id="agregarProducto">Agregar producto</button>
+                        <button class="accion" id="calcularTotal">Calcular total</button>
+                        <button class="accion">Pagar</button>
+                        <button class="accion">Cancelar</button>
+                      </div>
+                    </div>
+                  
+                    <script>
+// Obtener referencia a los botones y la tabla
+var agregarProductoButton = document.getElementById('agregarProducto');
+var calcularTotalButton = document.getElementById('calcularTotal');
+var tablaProductos = document.getElementById('tablaProductos').getElementsByTagName('tbody')[0];
 
-                    <button class="button" onclick="agregarProducto()">Agregar Producto</button>
-                    <button class="button" onclick="imprimirFactura()">Imprimir Factura</button>
-                    <button class="button" onclick="calcularTotal()">Calcular Total</button>
+// Agregar evento click al botón "Agregar producto"
+agregarProductoButton.addEventListener('click', function() {
+  var nombreProducto = prompt('Ingrese el nombre del producto:');
+  var precioProducto = parseFloat(prompt('Ingrese el precio del producto:'));
+  var cantidadProducto = parseInt(prompt('Ingrese la cantidad del producto:'));
 
-                </body>
+  var totalProducto = precioProducto * cantidadProducto;
+
+  var fila = document.createElement('tr');
+  fila.innerHTML = `
+    <td>${nombreProducto}</td>
+    <td>${precioProducto}</td>
+    <td>${cantidadProducto}</td>
+    <td>${totalProducto}</td>
+  `;
+
+  tablaProductos.appendChild(fila);
+});
+
+// Agregar evento click al botón "Calcular total"
+calcularTotalButton.addEventListener('click', function() {
+  var filas = tablaProductos.getElementsByTagName('tr');
+  var totalFactura = 0;
+
+  for (var i = 0; i < filas.length; i++) {
+    var totalProducto = parseFloat(filas[i].getElementsByTagName('td')[3].innerText);
+    totalFactura += totalProducto;
+  }
+
+  alert('Total a facturar: ' + totalFactura);
+});
+
+
+                    </script>
+                  </body>
+                  
+                  
             </section>
         </main>   
         
 
     </body>
-    <script>
-        function agregarProducto() {
-            var nombreProducto = prompt("Ingrese el nombre del producto:");
-            var precioProducto = parseFloat(prompt("Ingrese el precio del producto:"));
-            var cantidadProducto = parseInt(prompt("Ingrese la cantidad del producto:"));
-
-            var tablaCompras = document.getElementById("tabla-compras");
-            var nuevaFila = tablaCompras.insertRow(-1);
-            var celdaProducto = nuevaFila.insertCell(0);
-            var celdaPrecio = nuevaFila.insertCell(1);
-            var celdaCantidad = nuevaFila.insertCell(2);
-
-            celdaProducto.innerHTML = nombreProducto;
-            celdaPrecio.innerHTML = "$" + precioProducto.toFixed(2);
-            celdaCantidad.innerHTML = cantidadProducto;
-
-            calcularTotal();
-        }
-
-        function imprimirFactura() {
-            // Lógica para imprimir la factura
-            alert("La factura se ha enviado a la impresora.");
-        }
-
-    </script>
+    
 </html>

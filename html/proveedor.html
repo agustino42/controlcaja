@@ -42,14 +42,21 @@
                                     <li>
                                         <a href="#">
                                             <i class="fas fa-home"></i>
-                                            <div class="title">Facturas PDF</div>
+                                            <div class="title">Agregar-Proveedor</div>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="/html/inventario.html">
+                                        <a href="">
                                             <i class="fas fa-headset"></i>
-                                            <div class="title">Ir Inventario</div>
+                                            <div class="title">Facturas por Pagar</div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">
+                                            <i class="far fa-user-circle"></i>
+                                            <div class="title">Proveedores de Confianza</div>
                                         </a>
                                     </li>
                                  
@@ -88,14 +95,9 @@
                                 <!DOCTYPE html>
                                 <html>
                                 <head>
-                                  <title>Impresión de Facturas</title>
+                                  <title>Proveedores</title>
                                   <style>
                                     /* Estilos CSS */
-                                    @media print {
-                                      .no-print {
-                                        display: none;
-                                      }
-                                    }
                                     body {
                                       font-family: Arial, sans-serif;
                                       background-color: #f4f4f4;
@@ -105,17 +107,36 @@
                                     h1 {
                                       text-align: center;
                                     }
-                                    .card-container {
-                                      display: grid;
-                                      grid-template-columns: repeat(3, 1fr);
-                                      grid-gap: 20px;
+                                    .table-container {
                                       margin-top: 40px;
+                                      overflow-x: auto;
+                                    }
+                                    table {
+                                      width: 100%;
+                                      border-collapse: collapse;
+                                      border-spacing: 0;
+                                      margin-bottom: 20px;
+                                    }
+                                    th, td {
+                                      padding: 10px;
+                                      text-align: left;
+                                      border-bottom: 1px solid #ddd;
+                                    }
+                                    th {
+                                      background-color: #f2f2f2;
+                                    }
+                                    .card-container {
+                                      display: flex;
+                                      flex-wrap: wrap;
+                                      justify-content: space-between;
                                     }
                                     .card {
+                                      width: calc(33% - 20px);
                                       background-color: #fff;
                                       border-radius: 5px;
                                       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                                       padding: 20px;
+                                      margin-bottom: 20px;
                                       transition: transform 0.3s ease;
                                     }
                                     .card:hover {
@@ -128,64 +149,89 @@
                                       color: #333;
                                     }
                                     .card-content {
-                                      margin-bottom: 20px;
                                       color: #666;
                                     }
-                                    .button {
-                                      background-color: #3bb2b8;
-                                      border: none;
-                                      color: white;
-                                      padding: 10px 20px;
-                                      text-align: center;
-                                      text-decoration: none;
-                                      display: inline-block;
-                                      font-size: 16px;
-                                      margin-top: 10px;
-                                      cursor: pointer;
-                                      border-radius: 5px;
-                                      transition: background-color 0.3s ease;
-                                    }
-                                    .button:hover {
-                                      background-color: #45a049;
-                                    }
-                                    .button:active {
-                                      background-color: #3e8940;
-                                    }
-                                    @keyframes fade-in {
-                                      from { opacity: 0; }
-                                      to { opacity: 1; }
-                                    }
-                                    .fade-in-animation {
-                                      animation: fade-in 1s ease;
+                                    .card-content p:last-child {
+                                      margin-bottom: 0;
                                     }
                                   </style>
                                 </head>
                                 <body>
-                                  <h1>Impresión de Facturas</h1>
+                                  <h1>Proveedores</h1>
+                                
+                                  <div class="table-container">
+                                    <table>
+                                      <thead>
+                                        <tr>
+                                          <th>Proveedor</th>
+                                          <th>Total a Pagar</th>
+                                          <th>Fecha de Último Despacho</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>Proveedor 1</td>
+                                          <td>$1000.00</td>
+                                          <td>01/05/2023</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Proveedor 2</td>
+                                          <td>$500.00</td>
+                                          <td>10/05/2023</td>
+                                        </tr>
+                                        <!-- Agrega más filas para otros proveedores -->
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                
+                                  <h2>Reseña de Proveedores</h2>
+                                
+                                  <div class="card-container">
+                                    <div class="card">
+                                      <h3 class="card-title">Proveedor 1</h3>
+                                      <div class="card-content">
+                                        <p>Esta es una breve reseña del Proveedor 1. Puedes agregar información relevante sobre este proveedor aquí.</p>
+                                      </div>
+                                    </div>
+                                
+                                    <div class="card">
+                                      <h3 class="card-title">Proveedor 2</h3>
+                                      <div class="card-content">
+                                        <p>Esta es una breve reseña del Proveedor 2. Puedes agregar información relevante sobre este proveedor aquí.</p>
+                                      </div>
+                                    </div>
+                                
+                                    <!-- Agrega más cartas para otros proveedores -->
+                                  </div>
+                                </body>
+                                </html>
+                                
+                                <body>
+                                  <h1>Agregar Nuevos Proveedores</h1>
                                 
                                   <div class="card-container">
                                     <div class="card fade-in-animation">
-                                      <h2 class="card-title">Facturas Z</h2>
+                                      <h2 class="card-title">Agregar Nuevos Proveedores</h2>
                                       <div class="card-content">
-                                        <p>Aquí puedes mostrar información relevante sobre las Facturas Z.</p>
+                                        <p>Agrega Nuevos Proveedores</p>
                                       </div>
-                                      <button class="button no-print">Imprimir Facturas Z</button>
+                                      <button class="button no-print">Agregar</button>
                                     </div>
                                 
                                     <div class="card fade-in-animation">
-                                      <h2 class="card-title">Total de Puntos de Venta</h2>
+                                      <h2 class="card-title">Proveedores Mas Antiguos</h2>
                                       <div class="card-content">
-                                        <p>Aquí puedes mostrar información sobre el total de puntos de venta.</p>
+                                        <p>Aquí puedes mostrar información sobre los proveedores de Confianza.</p>
                                       </div>
-                                      <button class="button no-print">Imprimir Total de Puntos de Venta</button>
+                                      <button class="button no-print">Buscar</button>
                                     </div>
                                 
                                     <div class="card fade-in-animation">
-                                      <h2 class="card-title">Total de Reportes Z</h2>
+                                      <h2 class="card-title">Total Deuda Proveedores</h2>
                                       <div class="card-content">
-                                        <p>Aquí puedes mostrar información sobre el total de reportes Z generados.</p>
+                                        <p>Facturas por pagar.</p>
                                       </div>
-                                      <button class="button no-print">Imprimir Total de Reportes Z</button>
+                                      <button class="button no-print">Imprimir Reporte "Facturas Pendiente"</button>
                                     </div>
                                   </div>
                                 </body>

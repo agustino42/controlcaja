@@ -39,11 +39,19 @@
                             </div>
                             <nav>
                                 <ul>
-                                    
+                                    <li>
+                                        <a href="/html/inventario.buscar-proveedor.html">
+                                            <i class="fas fa-home"></i>
+                                            <div class="title">Buscar Proveedor</div>
+                                        </a>
+                                    </li>
 
-                                 
-
-                                   
+                                    <li>
+                                        <a href="/html/inventario.html">
+                                            <i class="fas fa-headset"></i>
+                                            <div class="title">Ir Inventario</div>
+                                        </a>
+                                    </li>
                                  
                                  
                                     <li>
@@ -77,13 +85,17 @@
                             <!--Aqui comienza el contenido -->
             
                             <section class="main">
-
                                 <!DOCTYPE html>
 <html>
 <head>
-  <title>Total Ventas</title>
+  <title>Reporte de Ventas</title>
   <style>
     /* Estilos CSS */
+    @media print {
+      .no-print {
+        display: none;
+      }
+    }
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -93,54 +105,30 @@
     h1 {
       text-align: center;
     }
-    .sales-container {
-      display: flex;
-      justify-content: space-between;
+    .card-container {
+      display: flexbox;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
       margin-top: 40px;
     }
-    .sales-card {
-      flex-basis: 30%;
+    .card {
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       padding: 20px;
-      transition: transform 0.3s ease;
     }
-    .sales-card:hover {
-      transform: scale(1.05);
-    }
-    .sales-card-title {
+    .card-title {
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 10px;
       color: #333;
     }
-    .sales-card-content {
+    .card-content {
+      margin-bottom: 20px;
       color: #666;
     }
-    .sales-card-content p:last-child {
-      margin-bottom: 0;
-    }
-    .table-container {
-      margin-top: 40px;
-      overflow-x: auto;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      border-spacing: 0;
-      margin-bottom: 20px;
-    }
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
     .button {
-      background-color: #3bb2b8;
+      background-color: #4CAF50;
       border: none;
       color: white;
       padding: 10px 20px;
@@ -154,82 +142,71 @@
       transition: background-color 0.3s ease;
     }
     .button:hover {
-      background-color: #45a049;
+      background-color: #3bb2b8;
     }
     .button:active {
-      background-color: #3e8940;
+      background-color: #3bb2b8;
     }
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .chart {
+      width: 100%;
+      height: 300px;
+      background-color: #f2f2f2;
+      margin-bottom: 20px;
     }
-    .fade-in-animation {
-      animation: fade-in 1s ease;
+    .chart-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
     }
   </style>
 </head>
 <body>
-  <h1>Ventas</h1>
+  <h1>Reporte de Ventas</h1>
 
-  <div class="sales-container">
-    <div class="sales-card fade-in-animation">
-      <h2 class="sales-card-title">Ventas del Día</h2>
-      <div class="sales-card-content">
-        <p>Aquí puedes mostrar información relevante sobre las ventas del día.</p>
+  <div class="card-container">
+    <div class="card">
+      <h2 class="card-title">Total de Ventas</h2>
+      <div class="card-content">
+        <span class="chart-title">Gráfico de Ventas</span>
+        <div class="chart"></div>
+        <p>Este es un ejemplo de un reporte de ventas. Aquí puedes agregar información relevante y personalizada.</p>
+      </div>
+      <button class="button no-print" onclick="window.print()">Imprimir Reporte</button>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Productos Vendidos</h2>
+      <div class="card-content">
+        <p>Aquí puedes mostrar información detallada sobre los productos vendidos.</p>
       </div>
     </div>
 
-    <div class="sales-card fade-in-animation">
-      <h2 class="sales-card-title">Ventas del Mes</h2>
-      <div class="sales-card-content">
-        <p>Aquí puedes mostrar información sobre las ventas del mes.</p>
-      </div>
-    </div>
-
-    <div class="sales-card fade-in-animation">
-      <h2 class="sales-card-title">Ventas del Año</h2>
-      <div class="sales-card-content">
-        <p>Aquí puedes mostrar información sobre las ventas del año.</p>
+    <div class="card">
+      <h2 class="card-title">Resumen de Ganancias</h2>
+      <div class="card-content">
+        <p>Aquí puedes mostrar un resumen de las ganancias obtenidas en un período específico.</p>
       </div>
     </div>
   </div>
 
-  <h2>Días con Más Ventas</h2>
-
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Día</th>
-          <th>Ventas</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Lunes</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <td>Martes</td>
-          <td>15</td>
-        </tr>
-        <!-- Agrega más filas para otros días -->
-      </tbody>
-    </table>
-  </div>
-
-  <div class="button-container">
-    <button class="button">Imprimir Total de Ganancias al Día</button>
-    <button class="button">Imprimir Total de Ganancias a la Semana</button>
-    <button class="button">Imprimir Total de Ganancias al Mes</button>
-    <button class="button">Imprimir Total de Ganancias al Año</button>
-  </div>
+  <script>
+    // Aquí puedes agregar la lógica para generar y mostrar gráficos dinámicos utilizando librerías como Chart.js
+  </script>
 </body>
 </html>
 
-                   
-                                </html>
-                                
+
+                                   
+                
+            
+                               
+                            
+            
+                               
+            
+            
+            
                             </section>
                         
 
@@ -245,7 +222,12 @@
                         </main>   
                     </div>
             
-
+            
+                
+                    <a href="#top" class="scroll-top">
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
+            
                     
                 </body>
             </html>   
