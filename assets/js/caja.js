@@ -4,7 +4,7 @@ const productos = [
     {
         id: "zanahoria-01",
         titulo: "Zanahoria 01",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Hortalizas",
             id: "hortalizas"
@@ -14,7 +14,7 @@ const productos = [
     {
         id: "limon-02",
         titulo: "Limon 02",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Hortalizas",
             id: "hortalizas"
@@ -24,7 +24,7 @@ const productos = [
     {
         id: "ajo-03",
         titulo: "Ajo",
-        imagen: "./img/abrigos/03.jpg",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Hortalizas",
             id: "hortalizas"
@@ -34,7 +34,7 @@ const productos = [
     {
         id: "cebolla-04",
         titulo: "Cebolla 04",
-        imagen: "./img/abrigos/04.jpg",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Hortalizas",
             id: "hortalizas"
@@ -44,7 +44,7 @@ const productos = [
     {
         id: "papas-05",
         titulo: "Papas 05",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Hortizas",
             id: "hortalizas"
@@ -55,7 +55,7 @@ const productos = [
     {
         id: "muslo-01",
         titulo: "Muslo 01",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "frigorifico",
             id: "frigorifico"
@@ -65,7 +65,7 @@ const productos = [
     {
         id: "pollo-02",
         titulo: "Pollo 02",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Frigorifico",
             id: "frigorifico"
@@ -75,7 +75,7 @@ const productos = [
     {
         id: "Hueso-03",
         titulo: "Hueso 03",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Frigorifico",
             id: "frigorifico"
@@ -85,7 +85,7 @@ const productos = [
     {
         id: "punta-04",
         titulo: "Punta 04",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Frigorifico",
             id: "frigorifico"
@@ -95,7 +95,7 @@ const productos = [
     {
         id: "solomo-05",
         titulo: "Solomo 05",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Frigorifico",
             id: "frigorifico"
@@ -105,7 +105,7 @@ const productos = [
     {
         id: "lomito-06",
         titulo: "Lomito 06",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Frigorifico",
             id: "frigorifico"
@@ -115,7 +115,7 @@ const productos = [
     {
         id: "costilla-07",
         titulo: "Costilla 07",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Frigorifico",
             id: "frigorifico"
@@ -125,7 +125,7 @@ const productos = [
     {
         id: "carne-08",
         titulo: "Carnes 08",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Frigorifico",
             id: "frigorifico"
@@ -136,7 +136,7 @@ const productos = [
     {
         id: "sardinas-01",
         titulo: "Sardinas 01",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Mercado",
             id: "mercado"
@@ -146,7 +146,7 @@ const productos = [
     {
         id: "Atum-02",
         titulo: "Atum 02",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Mercado",
             id: "mercado"
@@ -156,7 +156,7 @@ const productos = [
     {
         id: "arroz-03",
         titulo: "Arroz 03",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Mercado",
             id: "mercado"
@@ -166,7 +166,7 @@ const productos = [
     {
         id: "pasta-04",
         titulo: "Pasta 04",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Mercado",
             id: "mercado"
@@ -176,7 +176,7 @@ const productos = [
     {
         id: "harina-05",
         titulo: "Harina 05",
-        imagen: "",
+        imagen: "./img/img1/product1.jpg",
         categoria: {
             nombre: "Mercado",
             id: "mercado"
@@ -184,3 +184,37 @@ const productos = [
         precio: 1000
     }
 ];
+
+const contenedorProductos = document.querySelector("#contenedor-productos");
+const botonesCategorias = document.querySelectorAll(".boton-categoria");
+
+
+function cargarProductos() {
+ 
+    productos.forEach(producto => {
+      
+        const div = document.createElement("div");
+        div.classList.add("producto");
+        div.innerHTML = `
+       <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
+       <div class="producto-detalles">
+       <h3 class="producto-titulo">${producto.titulo}</h3>
+        <p class="producto-precio">$${producto.precio}</p>
+       <button class="producto-agregar" id="${producto.id}">Agregar</button>
+       </div>
+ `;
+
+ contenedorProductos.append(div);
+    })
+
+}
+
+cargarProductos();
+
+botonesCategorias.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+
+        e.currentTarget.classList.add("active");
+
+    })
+})
