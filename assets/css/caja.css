@@ -65,7 +65,6 @@ aside {
 background-color: transparent;
 border: 0;
 color: var(--crl-white);
-font-size: 1rem;
 cursor: pointer;
 display: flex;
 align-items: center;
@@ -73,15 +72,17 @@ gap: 1rem;
 font-weight: 600;
 padding: 1rem;
 font-size: .85rem;
+width: 100%;
 }
 
 .boton-menu.active {
    background-color: var(--crl-white);
    color: var(--clr-main);
-   width: 100%;
    border-top-left-radius: 1rem;
    border-bottom-left-radius: 1rem;
    position: relative;
+   
+   
 }
 
 /*ojo pelao*/

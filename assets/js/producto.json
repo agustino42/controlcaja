@@ -1,0 +1,182 @@
+[
+    {
+        "id": "Carnes de 1",
+        "titulo": "Carnes de 1",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Frigorifico",
+            "id": "frigorifico"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Hueso rojo",
+        "titulo": "Hueso rojo",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Frigorifico",
+            "id": "frigorifico"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "costillas",
+        "titulo": "costillas",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Frigorifico",
+            "id": "frigorifico"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Pollo Entero",
+        "titulo": "pollo Entero",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Frigorifico",
+            "id": "frigorifico"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Lomito",
+        "titulo": "Lomito",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Frigorifico",
+            "id": "frigorifico"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Harina",
+        "titulo": "Harina",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Mercado Productos",
+            "id": "mercado"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Pasta",
+        "titulo": "Pasta",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Mercado Productos",
+            "id": "mercado"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Arroz",
+        "titulo": "Arroz",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Mercado Productos",
+            "id": "mercado"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Atum",
+        "titulo": "Atum",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Mercado Productos",
+            "id": "mercado"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Cerveza",
+        "titulo": "Cerveza",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Mercado Productos",
+            "id": "mercado"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Refrescos",
+        "titulo": "Refrescos",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Mercado Productos",
+            "id": "mercado"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Agua",
+        "titulo": "Agua",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Mercado Productos",
+            "id": "mercado"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Yerba",
+        "titulo": "Yerba",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Mercado Productos",
+            "id": "mercado"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Huevos",
+        "titulo": "Huevos",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Hortalizas",
+            "id": "hortalizas"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Platanos",
+        "titulo": "Platanos",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Hortalizas",
+            "id": "hortalizas"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Ajos",
+        "titulo": "Ajo",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Hortalizas",
+            "id": "hortalizas"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Cebollas",
+        "titulo": "Cebollas",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Hortalizas",
+            "id": "hortalizas"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Zanahorias",
+        "titulo": "Zanahorias",
+        "imagen": "./img/img1/product1.jpg",
+        "categoria": {
+            "nombre": "Hortalizas",
+            "id": "hortalizas"
+        },
+        "precio": 1000
+    }
+]
