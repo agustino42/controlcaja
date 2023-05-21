@@ -211,6 +211,7 @@ function cargarProductos() {
 
 cargarProductos();
 
+
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (e) => {
 
