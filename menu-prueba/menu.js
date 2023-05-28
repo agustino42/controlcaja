@@ -1,4 +1,6 @@
 
+//GRAFICOS .!
+
 const myChart = document.getElementById('myChart');
 
   new Chart(myChart, {
