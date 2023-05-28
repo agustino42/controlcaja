@@ -506,10 +506,28 @@ canvas#myChart {
    padding: var(--card-padding); 
 }
 
-canvas#myGrafico {
+canvas#grafico {
     background: var(--color-white);
     max-width: 100%;
     margin-top: 2rem;
     border-radius: var(--card-border-radius);
     padding: var(--card-padding); 
  }
+
+ canvas#torta {
+    background: var(--color-white);
+    max-width: 100%;
+    margin-top: 2rem;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding); 
+ }
+ 
+ canvas#productos {
+    background: var(--color-white);
+    max-width: 100%;
+    margin-top: 2rem;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding); 
+ }
+ 
+
