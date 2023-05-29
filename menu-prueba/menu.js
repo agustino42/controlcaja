@@ -149,4 +149,9 @@ const myChart = document.getElementById('myChart');
 
   botonesBtn.addEventListener('click', ()  => {
     document.body.classList.toggle('dark-theme');
+
+    botonesBtn.querySelector('span:frist-child').classList.toggle('active')
+    ;
+    botonesBtn.querySelector('span:last-child').classList.toggle('active')
+    ;
   })
