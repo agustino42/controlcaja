@@ -138,6 +138,36 @@ small {
  
 }
 
+.bg-color {
+    background: #85eea8;
+    box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2);
+ 
+}
+.bg-color1 {
+    background: #f5d56d;
+    box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2);
+ 
+}
+
+.bg-color2 {
+    background: #ee849f;
+    box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2);
+ 
+}
+
+.bg-color3 {
+    background: #e4ec6c;
+    box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2);
+ 
+}
+.bg-color4 {
+    background: #f0978b;
+    box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2);
+ 
+}
+
+
+
 /*NAvBar El Estilo Q tal q Frao*/
 
 nav{
@@ -577,7 +607,7 @@ main section.right .proveedores {
 }
 
 main section.right .proveedores img {
-    width: 10rem;
+    width: 8rem;
 }
 
 main section.right .proveedores .header{
@@ -591,7 +621,7 @@ main section.right .proveedores .header{
 main section.right .proveedores .header a{
     display: flex;
     align-items: center;
-    color: var(--color-primary);
+    color: var(--color-azulito);
 
 }
 
@@ -600,7 +630,7 @@ main section.right .proveedores .proveedor{
     align-items: center;
     justify-content: space-between;
     padding: var(--card-padding);
-    border-bottom: 1px solid var(color --color-light);
+    border-bottom: 1px solid var(--color-azulito);
     transition: all 300ms ease;
 }
 
@@ -609,6 +639,137 @@ main section.right .proveedores .proveedor:last-child{
 }
 
 main section.right .proveedores .proveedor:hover{
-    background: var(color --color-light);
+    background: var(--color-azulito);
     cursor: pointer;
 }
+
+/*-----------TRansferencias EStilos -------------------*/
+
+main .pagos{
+    margin-top: 2rem;
+}
+
+main .pagos img{
+    width: 3rem;
+}
+
+main .pago .header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: var(--color-primary-light);
+
+}
+
+main .pago .header a{
+   display: flex;
+   align-items: center;
+
+}
+main .pagos .tranferencias {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem var(--card-padding);
+    border-radius: var(--card-border-radius);
+}
+
+main .pagos .tranferencias:hover {
+    background: var(--color-azulito);
+    cursor: pointer;
+}
+
+main .pagos .tranferencias .banco{
+    display: flex;
+    gap: 1rem;
+}
+
+main .pagos .tranferencias .banco .icon{
+    padding: var(--padding-2);
+    border-radius: var(--border-radius-1);
+    display: flex;
+    align-items: center;
+}
+
+main .pagos .card-detalles{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+main .pagos .card-detalles .card{
+display: flex;
+width: 4.6rem;
+height: 3rem;
+align-items: center;
+justify-content: center;
+border-radius: var(--border-radius-2);
+}
+ /*TELEFONOS TABLES MEDIA QUERIES*/
+ @media screen and (max-width: 1024px) {
+   nav .search-bar{
+    display: none;
+   }
+   nav .perfil-area{
+    gap: 2rem;
+   }
+
+   nav .perfil-area button#menu-btn {
+    display: inline;
+    background: transparent;
+    color: var(--color-dark);
+   }
+
+   main{
+    grid-template-columns: 1fr;
+   }
+
+   main aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: var(--color-white);
+    width: 22rem;
+    height: 100vh;
+    box-shadow: 2rem 0 2rem var(--color-primary-light);
+    display: none;
+
+   }
+
+   main aside button#close-btn {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 4;
+  background: transparent;
+  color: var(--color-dark);
+   }
+
+   button:hover {
+    cursor: pointer;
+   }
+ main aside .sidebar{
+    margin-top: 4rem;
+ }
+
+ main aside .updates{
+    display: none;
+ }
+
+ main section.middle .cards{
+grid-template-columns: 1fr 1fr;
+ }
+
+ main canvas {
+    margin: 3rem 0 1rem;
+ }
+ main section.right .pagos{
+    margin-top: 3rem;
+ }
+ }
+
+  /*TELEFONOS TABLES MEDIA QUERIES*/

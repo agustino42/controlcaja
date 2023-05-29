@@ -35,17 +35,29 @@ const myChart = document.getElementById('myChart');
       labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre', 'Diciembre'],
       datasets: [
         {
-        label: 'Gastos',
+        label: 'Hortalizas',
         data: [100, 42, 211, 900, 411,211,110,99,201,900, 500, 1500],
         borderWidth: 1,
         color:'red',
       },
       {
-        label: 'Ganancias',
+        label: 'Productos',
         data: [400, 150, 100, 1500, 600, 300, 700,600,800,1900, 700,6000],
         borderWidth: 4,
         color: 'blue',
-      }
+      },
+      {
+        label: 'Frigorifico',
+        data: [400, 150, 100, 1500, 600, 300, 700,600,800,1900, 700,500],
+        borderWidth: 4,
+        color: 'blue',
+      },
+      {
+        label: 'Productos mas Vendidos',
+        data: [140, 500, 100, 1500, 600, 300, 700,600,800,1900, 700,100],
+        borderWidth: 4,
+        color: 'blue',
+      },
     ]
     },
     options: {
@@ -62,7 +74,7 @@ const myChart = document.getElementById('myChart');
       labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre', 'Diciembre'],
       datasets: [
         {
-        label: 'Ganancias',
+        label: 'Pagos Moviles',
         data: [100, 42, 211, 900, 411,211,110,99,201,900, 500, 1500],
         borderWidth: 1,
         backgroundColor: [
@@ -90,7 +102,7 @@ const myChart = document.getElementById('myChart');
       labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre', 'Diciembre'],
       datasets: [
         {
-        label: 'Ganancias',
+        label: 'Total Puntos de Venta',
         data: [100, 42, 211, 900, 411,211,110,99,201,900, 500, 1500],
         borderWidth: 1,
         backgroundColor: [
