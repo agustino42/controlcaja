@@ -128,3 +128,25 @@ const myChart = document.getElementById('myChart');
     },
     
   });
+
+  // mostar el HIDE SIDEBAR
+
+  const menuBtn = document.querySelector('#menu-btn');
+  const closeBtn = document.querySelector('#close-btn');
+  const sidebar = document.querySelector('aside');
+
+  menuBtn.addEventListener('click', () => {
+    sidebar.style.display = 'block';
+  })
+
+  closeBtn.addEventListener('click', () => {
+    sidebar.style.display = 'none';
+  })
+
+  //CAMBIAR EL TEMA QLQ WHITE AND BLACK
+
+  const botonesBtn = document.querySelector('.botones');
+
+  botonesBtn.addEventListener('click', ()  => {
+    document.body.classList.toggle('dark-theme');
+  })

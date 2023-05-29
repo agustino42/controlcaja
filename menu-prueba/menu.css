@@ -24,6 +24,13 @@
      --border-radius-2: 6px;
    
 }
+/*DARK VARIABLES */
+.dark-theme {
+--color-white: #131316;
+--color-light: #23232a;
+--color-dark: #ddd;
+--color-gray-dark:#adacb5;
+}
 
 *{
     margin: 0;
@@ -727,14 +734,21 @@ border-radius: var(--border-radius-2);
    main aside {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -100%;
     z-index: 3;
     background-color: var(--color-white);
     width: 22rem;
     height: 100vh;
     box-shadow: 2rem 0 2rem var(--color-primary-light);
     display: none;
+    animation: showSidebar 500ms ease forwards;
 
+   }
+
+   @keyframes showSidebar {
+    to {
+        left: 0;
+    }
    }
 
    main aside button#close-btn {
@@ -773,3 +787,23 @@ grid-template-columns: 1fr 1fr;
  }
 
   /*TELEFONOS TABLES MEDIA QUERIES*/
+
+  @media screen and (max-width: 600px) {
+  nav .perfil-area{
+    gap: 2.6rem;
+  }
+    nav.profile h5,
+    nav.profile span {
+        display: none;
+    }
+
+    /*main section.middle .cards {
+        grid-template-columns: 1fr;
+    }*/
+main section.middle .fast-payment {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 3rem;
+    gap: 1.4rem;
+}
+  }
