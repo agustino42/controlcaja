@@ -419,7 +419,7 @@ main section.middle .header input[type="date"]{
  background: var(--color-white);  
  color: var(--color-gray-dark); 
 }
-
+/*   CARTASSSSSSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaS*/
 main section.middle .cards { 
    margin-top: 1rem;
    display: grid;
@@ -806,4 +806,35 @@ main section.middle .fast-payment {
     margin-top: 3rem;
     gap: 1.4rem;
 }
+  }
+
+  /* ESTILOS DEL HTML CONFIGURACIION :: PILAs .. -*/
+  .agregar-card{
+    margin-top: 1rem;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1.5rem; 
+   background: linear-gradient(#008cff, #057229);
+   padding: var(--card-padding);
+   border-radius: var(--card-border-radius);
+   color: white;
+   height: 11rem;
+   width: 15rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   box-shadow: 0 2rem 3rem var(--color-danger-light);
+   transition: all 300ms ease;
+   min-width: 11rem;
+   cursor: pointer;
+   box-shadow: 0 2rem 3rem var(--color-primary-light);
+   background: linear-gradient(#1ec2b4, #9c1908);
+   font-weight: 200;
+   font-size: 1.4rem;
+   align-items: center;
+  }
+
+  .producto1 .pagos .img {
+    width: 8rem;
+
   }

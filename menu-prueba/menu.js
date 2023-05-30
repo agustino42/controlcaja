@@ -47,7 +47,7 @@ const myChart = document.getElementById('myChart');
         color: 'blue',
       },
       {
-        label: 'Frigorifico',
+        label: 'Frigorifico:',
         data: [400, 150, 100, 1500, 600, 300, 700,600,800,1900, 700,500],
         borderWidth: 4,
         color: 'blue',
@@ -102,7 +102,7 @@ const myChart = document.getElementById('myChart');
       labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre', 'Diciembre'],
       datasets: [
         {
-        label: 'Total Puntos de Venta',
+        label: 'Total Productos Vendidos',
         data: [100, 42, 211, 900, 411,211,110,99,201,900, 500, 1500],
         borderWidth: 1,
         backgroundColor: [
