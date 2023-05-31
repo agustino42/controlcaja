@@ -136,77 +136,15 @@
      
         </aside>
         <!--TErmina el ASIDE-->
+
+        <!--    -->
         <section class="middle">
 <div class="header">
     <h1>Buscar por Fechas</h1>
     <input type="date">
 </div>
  <!--empieza carta 1-->
-<div class="agregar-card">
-    <div class="card1">
-<h2>Agregar Producto</h2>
-<div class="top1">
-<div class="left1">
-    <a href="/index.html">
-    <img src="" >
-    </a>
-    
-</div>
 
-
-
- 
-
-
-    
-</div>
-    </div>
-     <!--Final Carta 1-->
-     
-        <div class="card">
-    <h2></h2>
-    <div class="top">
-    <div class="left">
-        
-       
-        
-    </div>
-    
-    <img src="" class="right">
-   
-    </div>
-    <div class="middle">
-        <h2></h2>
-        <div class="chip">
-            <img src="">
-        </div>
-    </div>
-    
-    <div class="bottom">
-        <div class="left">
-            <small></small>
-            <h5></h5>
-        </div>
-        <div class="right">
-            <div class="pagar">
-            <small></small>
-            <h5></h5>
-            </div>
-        </div>
-    
-        <div class="producto">
-            <div>
-            <small></small>
-            <h5></h5>
-            <h3></h3>
-            </div>
-        </div>
-        
-    </div>
-        </div>
-        <!--Final Carta 2-->
-        
-</div>
  <!--Final seccion Cartas-->
 
 
@@ -307,6 +245,172 @@
                 </div>
 
             </div>
+         </div>
+
+ <!-- AQUI Comienza VAAAA ALGO DE EJEMPLO XD SSSSSSSSSSSSSSSSSSSSSSSSSS -->
+
+         <div>
+            <h1>
+                <div class="container">
+                     
+                    <div class="container1">
+                        <h2>Agregar Nuevo Producto</h2>
+                        <input type="text" id="product" placeholder="Nombre del producto">
+                        <input type="text" id="price" placeholder="Precio">
+                        <input type="number" id="quantity" placeholder="Cantidad">
+                        <input type="date" id="date" placeholder="Fecha">
+                        <button id="addButton">Agregar</button>
+                      </div>
+                  
+                      <div class="table-container">
+                        <table id="inventoryTable">
+                          <thead>
+                            <tr>
+                              <th>Producto</th>
+                              <th>Precio</th>
+                              <th>Cantidad</th>
+                              <th>Fecha</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Aquí se agregarán las filas de datos -->
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td colspan="2"><strong>Total:</strong></td>
+                              <td id="totalQuantity">0</td>
+                              <td></td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                  
+                      <div class="button-container">
+                        <button id="printButton">Imprimir Reporte por Fecha</button>
+                        <button id="takePhotoButton">Tomar Foto del Producto</button>
+                      </div>
+
+
+
+
+                    <style>
+                       .container1 {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+tfoot td {
+  text-align: right;
+}
+
+.button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+                    </style>
+                    <script>
+                      // Obtener referencias a los elementos del DOM
+const productInput = document.getElementById('product');
+const priceInput = document.getElementById('price');
+const quantityInput = document.getElementById('quantity');
+const dateInput = document.getElementById('date');
+const addButton = document.getElementById('addButton');
+const inventoryTableBody = document.querySelector('#inventoryTable tbody');
+const totalQuantityCell = document.getElementById('totalQuantity');
+const printButton = document.getElementById('printButton');
+const takePhotoButton = document.getElementById('takePhotoButton');
+
+// Agregar un evento de clic al botón Agregar
+addButton.addEventListener('click', function() {
+  // Obtener los valores de los campos de entrada
+  const product = productInput.value;
+  const price = parseFloat(priceInput.value);
+  const quantity = parseInt(quantityInput.value);
+  const date = dateInput.value;
+
+  // Validar que los campos no estén vacíos
+  if (product === '' || isNaN(price) || isNaN(quantity) || date === '') {
+    alert('Por favor, complete todos los campos');
+    return;
+  }
+
+  // Crear una nueva fila en la tabla
+  const newRow = document.createElement('tr');
+  newRow.innerHTML = `
+    <td>${product}</td>
+    <td>$${price.toFixed(2)}</td>
+    <td>${quantity}</td>
+    <td>${date}</td>
+  `;
+  inventoryTableBody.appendChild(newRow);
+
+  // Actualizar la suma total de la cantidad
+  const totalQuantity = parseInt(totalQuantityCell.textContent);
+  totalQuantityCell.textContent = totalQuantity + quantity;
+
+  // Limpiar los campos de entrada después de agregar
+  productInput.value = '';
+  priceInput.value = '';
+  quantityInput.value = '';
+  dateInput.value = '';
+});
+
+// Agregar eventos de clic para los botones adicionales
+printButton.addEventListener('click', function() {
+  // Lógica para imprimir el reporte por fecha
+  // ...
+});
+
+takePhotoButton.addEventListener('click', function() {
+  // Lógica para tomar foto del producto
+  // ...
+});
+
+                    </script>
+                  </div>
+<!-- AQUI  VAAAA ALGO DE EJEMPLO XD SSSSSSSSSSSSSSSSSSSSSSSSSS -->
+
+            </h1>
          </div>
           <!--Grafico-->
          

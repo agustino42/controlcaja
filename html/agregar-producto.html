@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sistema De Inventario Urano Itech!!</title>
+        <title>Sistema-Agregar-Produtos</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
          
@@ -127,10 +127,10 @@
             <span class="material-icons-sharp">
                 update
                 </span>
-                <h4>Actualizacion Del Sistema</h4>
-                <p>Seguridad 2AF Actualizar </p>
+                <h4>Actualizar Lista Con la Base de Datos</h4>
+                <p>Buscar Productos Nuevos </p>
                 <p>General Actualizar </p>
-                <a href="#">Actualizar Todo Ya</a>
+                <a href="#">BUSCAR</a>
         </div>
 
      
@@ -138,151 +138,361 @@
         <!--TErmina el ASIDE-->
         <section class="middle">
 <div class="header">
-    <h1>Overview</h1>
-    <input type="date">
+    <h1>Agregar Productos Al Inventario </h1>
+   
 </div>
  <!--empieza carta 1-->
-<div class="cards">
-    <div class="card">
-<h2>CAJA</h2>
-<div class="top">
-<div class="left">
-    <a href="/index.html">
-    <img src="/img/caja1.png" >
-    </a>
-    
-</div>
-<img src="/img/visa.png" class="right">
-</div>
-<div class="middle">
-    <h2></h2>
-    <h1></h1>
-    <div class="chip">
-      <img src="/img/chip.png" >  
-    </div>
-    
-</div>
+ <!-- AQUI Comienza VAAAA ALGO DE EJEMPLO XD SSSSSSSSSSSSSSSSSSSSSSSSSS -->
 
-<div class="bottom">
-    <div class="left">
-        <h1></h1>
-        <h5></h5>
-    </div>
-    <div class="right">
-        <div class="pagar">
-        <small></small>
-        <h5></h5>
-        </div>
-    </div>
-
-    <div class="producto">
+ <div>
+    <h1>
         <div>
-        <small></small>
-        <h5></h5>
-        <h3></h3>
-        </div>
-    </div>
+             
+            <div class="container1">
+                <h2>Registro de Producto</h2>
+                <input type="text" id="productId" placeholder="ID del Producto">
+                <input type="datetime-local" id="productDateTime" placeholder="Fecha y Hora">
+                <input type="text" id="productName" placeholder="Nombre del Producto">
+                <input type="number" id="quantity" placeholder="Cantidad">
+                <input type="number" id="productPrice" placeholder="Precio del Producto ($)">
+
+              
+                <input type="text" id="provider" placeholder="Nombre Proveedor ">
+  <input type="number" id="totalInvoice" placeholder="Total Factura" readonly>
+
+                <input type="text" id="paymentMethod" placeholder="Método de Pago">
+                <input type="date" id="dueDate" placeholder="Fecha Limite para Pagar Factura">
+                <textarea id="notes" placeholder="Notas"></textarea>
+                <button id="addButton">Agregar Producto</button>
+              </div>
+          
+              <div class="table-container">
+                <table id="productsTable">
+                  <thead>
+                    <tr>
+                      <th>ID del Producto</th>
+                      <th>Fecha y Hora</th>
+                      <th>Nombre del Producto</th>
+                      <th>Cantidad</th>
+                      <th>Precio del Producto ($)</th>
+
+       <th>Total Factura</th>               
+            <th>Proveedor</th>
+
+                      <th>Método de Pago</th>
+                      <th>Fecha Límite para Pagar</th>
+                      <th>Notas</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Aquí se agregarán las filas de datos -->
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="6"></td>
+                      <td id="totalInventoryAmount">0</td>
+                      <td colspan="3"></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+          
+              <div class="button-container">
+                <button id="printPDFButton">Imprimir Reporte PDF</button>
+                <button id="sendReportButton">Enviar Reporte Online</button>
+              </div>
+           
+          
+            
+           
     
-</div>
-    </div>
-     <!--Final Carta 1-->
-     
-        <div class="card">
-    <h2>Inventario</h2>
-    <div class="top">
-    <div class="left">
-        
-        <a href="">
-        <img src="/img/inventario1.png" >
-        </a>
-        
-    </div>
-    
-    <img src="/img/inventario2.png" class="right">
-   
-    </div>
-    <div class="middle">
-        <h2></h2>
-        <div class="chip">
-            <img src="/img/chip.png">
-        </div>
-    </div>
-    
-    <div class="bottom">
-        <div class="left">
-            <small></small>
-            <h5></h5>
-        </div>
-        <div class="right">
-            <div class="pagar">
-            <small></small>
-            <h5></h5>
-            </div>
-        </div>
-    
-        <div class="producto">
-            <div>
-            <small></small>
-            <h5></h5>
-            <h3></h3>
-            </div>
-        </div>
-        
-    </div>
-        </div>
-        <!--Final Carta 2-->
-        
-</div>
+
+
+
+
+            <style>
+               .container1 {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.input {
+  margin-bottom: 10px;
+}
+
+.table-container {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 1rem;
+}
+
+#salesTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#salesTable th, #salesTable td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+tfoot td {
+  font-weight: bold;
+  text-align: right;
+}
+
+.button-container {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+ 
+/* Estilos de la tabla */
+/* Estilos generales */
+
+/* Estilos de la tabla */
+#productsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #333;
+}
+
+#productsTable th,
+#productsTable td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+#productsTable th {
+  background-color: #f2f2f2;
+}
+
+#productsTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#productsTable tfoot td {
+  font-weight: bold;
+  background-color: #f2f2f2;
+  text-align: right;
+}
+
+/* Estilos de animación */
+@keyframes highlightRow {
+  0% {
+    background-color: #ffc;
+  }
+  50% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: #ffc;
+  }
+}
+
+.selected-row {
+  animation: highlightRow 1s infinite;
+}
+
+/* Estilos para botones */
+.button {
+  display: inline-block;
+  padding: 8px 16px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.button.dark {
+  background-color: #cfcccc;
+}
+
+.button.dark:hover {
+  background-color: #948e8e;
+}
+
+.button.light {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.button.light:hover {
+  background-color: #eee;
+}
+
+
+
+
+/* Estilos de las filas pares */
+#productsTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Estilos para resaltar la fila seleccionada */
+#productsTable tbody tr.selected {
+  background-color: #ffc;
+}
+
+/* Estilos para animar la fila seleccionada */
+@keyframes highlightRow {
+  0% {
+    background-color: #ffc;
+  }
+  50% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: #ffc;
+  }
+}
+
+#productsTable tbody tr.selected {
+  animation: highlightRow 1s infinite;
+}
+
+/* Estilos para agregar brillo */
+
+
+
+/* Estilos para el pie de tabla */
+#productsTable tfoot td {
+  font-weight: bold;
+  background-color: #f2f2f2;
+  text-align: right;
+}
+
+
+
+
+            </style>
+            <script>
+          
+  // Obtener referencias a los elementos del DOM
+const productIdInput = document.getElementById('productId');
+const productDateTimeInput = document.getElementById('productDateTime');
+const productNameInput = document.getElementById('productName');
+const quantityInput = document.getElementById('quantity');
+const productPriceInput = document.getElementById('productPrice');
+const totalInvoiceInput = document.getElementById('totalInvoice');
+const providerInput = document.getElementById('provider');
+const paymentMethodInput = document.getElementById('paymentMethod');
+const dueDateInput = document.getElementById('dueDate');
+const notesInput = document.getElementById('notes');
+const addButton = document.getElementById('addButton');
+const productsTableBody = document.querySelector('#productsTable tbody');
+const totalInventoryAmountCell = document.getElementById('totalInventoryAmount');
+const printPDFButton = document.getElementById('printPDFButton');
+const sendReportButton = document.getElementById('sendReportButton');
+
+// Agregar un evento de clic al botón Agregar Producto
+addButton.addEventListener('click', function() {
+  // Obtener los valores de los campos de entrada
+  const productId = productIdInput.value;
+  const productDateTime = productDateTimeInput.value;
+  const productName = productNameInput.value;
+  const quantity = parseInt(quantityInput.value);
+  const productPrice = parseFloat(productPriceInput.value);
+  const totalInvoice = quantity * productPrice;
+  const provider = providerInput.value;
+  const paymentMethod = paymentMethodInput.value;
+  const dueDate = dueDateInput.value;
+  const notes = notesInput.value;
+
+  // Validar que los campos no estén vacíos
+  if (productId === '' || productDateTime === '' || productName === '' || isNaN(quantity) || isNaN(productPrice) || provider === '') {
+    alert('Por favor, complete todos los campos obligatorios');
+    return;
+  }
+
+  // Crear una nueva fila en la tabla
+  const newRow = document.createElement('tr');
+  newRow.innerHTML = `
+    <td>${productId}</td>
+    <td>${productDateTime}</td>
+    <td>${productName}</td>
+    <td>${quantity}</td>
+    <td>${productPrice.toFixed(2)}</td>
+    <td>${totalInvoice.toFixed(2)}</td>
+    <td>${provider}</td>
+    <td>${paymentMethod}</td>
+    <td>${dueDate}</td>
+    <td>${notes}</td>
+  `;
+  productsTableBody.appendChild(newRow);
+
+  // Actualizar la suma total de inventario
+  const totalInventoryAmount = parseFloat(totalInventoryAmountCell.textContent);
+  totalInventoryAmountCell.textContent = (totalInventoryAmount + totalInvoice).toFixed(2);
+
+  // Limpiar los campos de entrada después de agregar
+  productIdInput.value = '';
+  productDateTimeInput.value = '';
+  productNameInput.value = '';
+  quantityInput.value = '';
+  productPriceInput.value = '';
+  totalInvoiceInput.value = '';
+  providerInput.value = '';
+  paymentMethodInput.value = '';
+  dueDateInput.value = '';
+  notesInput.value = '';
+});
+
+// Agregar un evento de clic al botón Imprimir Reporte PDF
+printPDFButton.addEventListener('click', function() {
+  // Lógica para imprimir el reporte en PDF
+  alert('Imprimiendo el reporte en PDF...');
+});
+
+// Agregar un evento de clic al botón Enviar Reporte Online
+sendReportButton.addEventListener('click', function() {
+  // Lógica para enviar el reporte en línea
+  alert('Enviando el reporte en línea...');
+});
+
+
+            </script>
+          </div>
+<!-- AQUI  VAAAA ALGO DE EJEMPLO XD SSSSSSSSSSSSSSSSSSSSSSSSSS -->
+
+
+
+
+
  <!--Final seccion Cartas-->
 
 
-        <div class="ganancias">
-            <div class="report">
-                <h3>Puntos y Transferencias</h3>
-                <div>
-                    <details>
-                       <h1>$29,422</h1>
-                       <h6 class="success">+3.5%</h6>
-                    </details>
-                    <p class="text-muted">Profit 15% al Mes</p>
-                </div>
-            </div>
-             <!---->
-            <div class="report">
-                <h3>Ganancias</h3>
-                <div>
-                    <details>
-                       <h1>$29,422</h1>
-                       <h6 class="success">+3.5%</h6>
-                    </details>
-                    <p class="text-muted">Profit 15% al Mes</p>
-                </div>
-            </div>
-             <!---->
-            <div class="report">
-                <h3>Gastos</h3>
-                <div>
-                    <details>
-                       <h1>$29,422</h1>
-                       <h6 class="danger">-64.$</h6>
-                    </details>
-                    <p class="text-muted">Gastos Administrativos</p>
-                </div>
-            </div>
-             <!---->
-            <div class="report">
-                <h3>Productos Activos </h3>
-                <div>
-                    <details>
-                       <h1>29,422 Productos</h1>
-                       <h6 class="success">+3.5%</h6>
-                    </details>
-                    <p class="text-muted">Productos en el Inventario</p>
-                </div>
-            </div>
-            
-            
-        </div>
+        
  <!------------------------------------------------------------>
         <div class="fast-payment">
             <h2>Pagos Rapidos</h2>
