@@ -252,161 +252,240 @@
          <div>
             <h1>
                 <div class="container">
-                     
-                    <div class="container1">
-                        <h2>Agregar Nuevo Producto</h2>
-                        <input type="text" id="product" placeholder="Nombre del producto">
-                        <input type="text" id="price" placeholder="Precio">
-                        <input type="number" id="quantity" placeholder="Cantidad">
-                        <input type="date" id="date" placeholder="Fecha">
-                        <button id="addButton">Agregar</button>
+   
+                  <!DOCTYPE html>
+                  <html>
+                    <head>
+                      <meta charset="UTF-8">
+                      <title>CRUD de Proveedores</title>
+                      <style>
+                        /* Estilos para la página */
+                        body {
+                          font-family: Arial, sans-serif;
+                          margin: 0;
+                          padding: 0;
+                        }
+                  
+                        /* Estilos para el encabezado */
+                        header {
+                          background-color: #333;
+                          color: #fff;
+                          padding: 20px;
+                          text-align: center;
+                        }
+                  
+                        /* Estilos para el formulario */
+                        form {
+                          display: flex;
+                          flex-direction: column;
+                          margin: 20px;
+                        }
+                  
+                        label {
+                          margin-bottom: 10px;
+                        }
+                  
+                        input[type="text"],
+                        input[type="date"],
+                        select {
+                          padding: 10px;
+                          margin-bottom: 20px;
+                          border-radius: 5px;
+                          border: none;
+                          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+                        }
+                  
+                        input[type="submit"] {
+                          background-color: #333;
+                          color: #fff;
+                          padding: 10px 20px;
+                          border-radius: 5px;
+                          border: none;
+                          cursor: pointer;
+                        }
+                  
+                        /* Estilos para la tabla */
+                        table {
+                          border-collapse: collapse;
+                          margin: 20px;
+                          width: 100%;
+                        }
+                  
+                        th, td {
+                          text-align: left;
+                          padding: 8px;
+                        }
+                  
+                        th {
+                          background-color: #333;
+                          color: #fff;
+                        }
+                  
+                        tr:nth-child(even) {
+                          background-color: #f2f2f2;
+                        }
+                  
+                        /* Estilos para la lista de proveedores VIP */
+                        #vip {
+                          margin: 20px;
+                        }
+                  
+                        #vip li {
+                          margin-bottom: 10px;
+                        }
+                  
+                        #vip span {
+                          font-weight: bold;
+                        }
+                      </style>
+                    </head>
+                    <body>
+                      <header>
+                        <h1>CRUD de Proveedores</h1>
+                      </header>
+                  
+                      <form id="formulario">
+                        <label for="nombre">Nombre del proveedor:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                  
+                        <label for="fecha">Fecha de ingreso:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                  
+                        <label for="producto">Producto que vende:</label>
+                        <input type="text" id="producto" name="producto" required>
+                  
+                        <label for="pago">Formas de pago:</label>
+                        <select id="pago" name="pago" required>
+                          <option value="">Selecciona una opción</option>
+                          <option value="efectivo">Efectivo</option>
+                          <option value="tarjeta">Tarjeta de crédito/débito</option>
+                          <option value="transferencia">Transferencia bancaria</option>
+                        </select>
+                  
+                        <input type="submit" value="Agregar">
+                      </form>
+                  
+                      <table id="tabla">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Nombre del proveedor</th>
+                            <th>Fecha de ingreso</th>
+                            <th>Producto que vende</th>
+                            <th>Formas de pago</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody id="filas">
+                          <!-- Las filas se agregan dinámicamente aquí -->
+                        </tbody>
+                      </table>
+                  
+                      <div id="vip">
+                        <h2>Proveedores VIP</h2>
+                        <ul id="lista-vip">
+                          <!-- Los proveedores VIP se agregan dinámicamente aquí -->
+                        </ul>
                       </div>
                   
-                      <div class="table-container">
-                        <table id="inventoryTable">
-                          <thead>
-                            <tr>
-                              <th>Producto</th>
-                              <th>Precio</th>
-                              <th>Cantidad</th>
-                              <th>Fecha</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <!-- Aquí se agregarán las filas de datos -->
-                          </tbody>
-                          <tfoot>
-                            <tr>
-                              <td colspan="2"><strong>Total:</strong></td>
-                              <td id="totalQuantity">0</td>
-                              <td></td>
-                            </tr>
-                          </tfoot>
-                        </table>
-                      </div>
-                  
-                      <div class="button-container">
-                        <button id="printButton">Imprimir Reporte por Fecha</button>
-                        <button id="takePhotoButton">Tomar Foto del Producto</button>
-                      </div>
+                      <script>
 
+                        // Variables globales
+let proveedores = [];
+let contador = 0;
 
-
-
-                    <style>
-                       .container1 {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-h2 {
-  margin-top: 0;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="date"] {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 5px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  font-size: 1rem;
-}
-
-th, td {
-  padding: 8px;
-  border: 1px solid #ccc;
-}
-
-tfoot td {
-  text-align: right;
-}
-
-.button-container {
-  margin-top: 20px;
-  text-align: center;
-}
-
-button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-right: 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-                    </style>
-                    <script>
-                      // Obtener referencias a los elementos del DOM
-const productInput = document.getElementById('product');
-const priceInput = document.getElementById('price');
-const quantityInput = document.getElementById('quantity');
-const dateInput = document.getElementById('date');
-const addButton = document.getElementById('addButton');
-const inventoryTableBody = document.querySelector('#inventoryTable tbody');
-const totalQuantityCell = document.getElementById('totalQuantity');
-const printButton = document.getElementById('printButton');
-const takePhotoButton = document.getElementById('takePhotoButton');
-
-// Agregar un evento de clic al botón Agregar
-addButton.addEventListener('click', function() {
-  // Obtener los valores de los campos de entrada
-  const product = productInput.value;
-  const price = parseFloat(priceInput.value);
-  const quantity = parseInt(quantityInput.value);
-  const date = dateInput.value;
-
-  // Validar que los campos no estén vacíos
-  if (product === '' || isNaN(price) || isNaN(quantity) || date === '') {
-    alert('Por favor, complete todos los campos');
-    return;
-  }
-
-  // Crear una nueva fila en la tabla
-  const newRow = document.createElement('tr');
-  newRow.innerHTML = `
-    <td>${product}</td>
-    <td>$${price.toFixed(2)}</td>
-    <td>${quantity}</td>
-    <td>${date}</td>
+// Función para agregar una nueva fila a la tabla
+function agregarFila(id, nombre, fecha, producto, pago) {
+  const tabla = document.querySelector('#tabla tbody');
+  const fila = document.createElement('tr');
+  fila.dataset.id = id;
+  fila.innerHTML = `
+    <td>${id}</td>
+    <td>${nombre}</td>
+    <td>${fecha}</td>
+    <td>${producto}</td>
+    <td>${pago}</td>
+    <td><button data-id="${id}" class="boton-eliminar">Eliminar</button></td>
   `;
-  inventoryTableBody.appendChild(newRow);
+  tabla.appendChild(fila);
+}
 
-  // Actualizar la suma total de la cantidad
-  const totalQuantity = parseInt(totalQuantityCell.textContent);
-  totalQuantityCell.textContent = totalQuantity + quantity;
+// Función para agregar un proveedor VIP a la lista
+function agregarVip(nombre, fecha) {
+  const lista = document.querySelector('#lista-vip');
+  const item = document.createElement('li');
+  item.innerHTML = `${nombre} - <span>${fecha}</span>`;
+  lista.appendChild(item);
+}
 
-  // Limpiar los campos de entrada después de agregar
-  productInput.value = '';
-  priceInput.value = '';
-  quantityInput.value = '';
-  dateInput.value = '';
-});
+// Función para actualizar la lista de proveedores VIP
+function actualizarVip() {
+  const proveedoresVip = proveedores.filter(proveedor => {
+    const fechaIngreso = new Date(proveedor.fecha);
+    const hoy = new Date();
+    const diferencia = (hoy - fechaIngreso) / (1000 * 60 * 60 * 24);
+    return diferencia >= 365;
+  });
+  const lista = document.querySelector('#lista-vip');
+  lista.innerHTML = '';
+  proveedoresVip.forEach(proveedor => {
+    agregarVip(proveedor.nombre, proveedor.fecha);
+  });
+}
 
-// Agregar eventos de clic para los botones adicionales
-printButton.addEventListener('click', function() {
-  // Lógica para imprimir el reporte por fecha
-  // ...
-});
+// Función para agregar un proveedor
+function agregarProveedor(evento) {
+  evento.preventDefault();
+  const formulario = evento.target;
+  const nombre = formulario.nombre.value;
+  const fecha = formulario.fecha.value;
+  const producto = formulario.producto.value;
+  const pago = formulario.pago.value;
+  const id = ++contador;
+  const proveedor = { id, nombre, fecha, producto, pago };
+  proveedores.push(proveedor);
+  agregarFila(id, nombre, fecha, producto, pago);
+  actualizarVip();
+  formulario.reset();
+}
 
-takePhotoButton.addEventListener('click', function() {
-  // Lógica para tomar foto del producto
-  // ...
-});
+// Función para eliminar un proveedor
+function eliminarProveedor(evento) {
+  if (evento.target.classList.contains('boton-eliminar')) {
+    const id = parseInt(evento.target.dataset.id);
+    const indice = proveedores.findIndex(proveedor => proveedor.id === id);
+    if (indice !== -1) {
+      proveedores.splice(indice, 1);
+      const fila = evento.target.closest('tr');
+      fila.remove();
+      actualizarVip();
+    }
+  }
+}
 
-                    </script>
+// Eventos
+const formulario = document.querySelector('#formulario');
+formulario.addEventListener('submit', agregarProveedor);
+
+const tabla = document.querySelector('#tabla');
+tabla.addEventListener('click', eliminarProveedor);
+
+                       </script>
+                  
+
+
+
+
+
+
+
+              
+                   
+                   
+
+
+
+                    
                   </div>
 <!-- AQUI  VAAAA ALGO DE EJEMPLO XD SSSSSSSSSSSSSSSSSSSSSSSSSS -->
 

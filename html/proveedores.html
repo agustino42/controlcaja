@@ -137,212 +137,237 @@
         </aside>
         <!--TErmina el ASIDE-->
         <section class="middle">
-<div class="header">
-    <h1>Overview</h1>
-    <input type="date">
-</div>
+
  <!--empieza carta 1-->
-<div class="cards">
-    <div class="card">
-<h2>CAJA</h2>
-<div class="top">
-<div class="left">
-    <a href="/index.html">
-    <img src="/img/caja1.png" >
-    </a>
+<div>
     
-</div>
-<img src="/img/visa.png" class="right">
-</div>
-<div class="middle">
-    <h2></h2>
-    <h1></h1>
-    <div class="chip">
-      <img src="/img/chip.png" >  
-    </div>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>CRUD de Proveedores</title>
+        <style>
+          /* Estilos para la página */
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+          }
     
-</div>
+          /* Estilos para el encabezado */
+          header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+          }
+    
+          /* Estilos para el formulario */
+          form {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+          }
+    
+          label {
+            margin-bottom: 10px;
+          }
+    
+          input[type="text"],
+          input[type="date"],
+          select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+          }
+    
+          input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+          }
+    
+          /* Estilos para la tabla */
+          table {
+            border-collapse: collapse;
+            margin: 20px;
+            width: 100%;
+          }
+    
+          th, td {
+            text-align: left;
+            padding: 8px;
+          }
+    
+          th {
+            background-color: #333;
+            color: #fff;
+          }
+    
+          tr:nth-child(even) {
+            background-color: #f2f2f2;
+          }
+    
+          /* Estilos para la lista de proveedores VIP */
+          #vip {
+            margin: 20px;
+          }
+    
+          #vip li {
+            margin-bottom: 10px;
+          }
+    
+          #vip span {
+            font-weight: bold;
+          }
+        </style>
+      </head>
+      <body>
+        <header>
+          <h1>CRUD de Proveedores</h1>
+        </header>
+    
+        <form id="formulario">
+          <label for="nombre">Nombre del proveedor:</label>
+          <input type="text" id="nombre" name="nombre" required>
+    
+          <label for="fecha">Fecha de ingreso:</label>
+          <input type="date" id="fecha" name="fecha" required>
+    
+          <label for="producto">Producto que vende:</label>
+          <input type="text" id="producto" name="producto" required>
+    
+          <label for="pago">Formas de pago:</label>
+          <select id="pago" name="pago" required>
+            <option value="">Selecciona una opción</option>
+            <option value="efectivo">Efectivo</option>
+            <option value="tarjeta">Tarjeta de crédito/débito</option>
+            <option value="transferencia">Transferencia bancaria</option>
+          </select>
+    
+          <input type="submit" value="Agregar">
+        </form>
+    
+        <table id="tabla">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre del proveedor</th>
+              <th>Fecha de ingreso</th>
+              <th>Producto que vende</th>
+              <th>Formas de pago</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="filas">
+            <!-- Las filas se agregan dinámicamente aquí -->
+          </tbody>
+        </table>
+    
+        <div id="vip">
+          <h2>Proveedores VIP</h2>
+          <ul id="lista-vip">
+            <!-- Los proveedores VIP se agregan dinámicamente aquí -->
+          </ul>
+        </div>
+    
+        <script>
 
-<div class="bottom">
-    <div class="left">
-        <h1></h1>
-        <h5></h5>
-    </div>
-    <div class="right">
-        <div class="pagar">
-        <small></small>
-        <h5></h5>
-        </div>
-    </div>
+          // Variables globales
+let proveedores = [];
+let contador = 0;
 
-    <div class="producto">
-        <div>
-        <small></small>
-        <h5></h5>
-        <h3></h3>
-        </div>
-    </div>
-    
-</div>
-    </div>
-     <!--Final Carta 1-->
-     
-        <div class="card">
-    <h2>Inventario</h2>
-    <div class="top">
-    <div class="left">
-        
-        <a href="">
-        <img src="/img/inventario1.png" >
-        </a>
-        
-    </div>
-    
-    <img src="/img/inventario2.png" class="right">
-   
-    </div>
-    <div class="middle">
-        <h2></h2>
-        <div class="chip">
-            <img src="/img/chip.png">
-        </div>
-    </div>
-    
-    <div class="bottom">
-        <div class="left">
-            <small></small>
-            <h5></h5>
-        </div>
-        <div class="right">
-            <div class="pagar">
-            <small></small>
-            <h5></h5>
-            </div>
-        </div>
-    
-        <div class="producto">
-            <div>
-            <small></small>
-            <h5></h5>
-            <h3></h3>
-            </div>
-        </div>
-        
-    </div>
-        </div>
-        <!--Final Carta 2-->
-        
+// Función para agregar una nueva fila a la tabla
+function agregarFila(id, nombre, fecha, producto, pago) {
+const tabla = document.querySelector('#tabla tbody');
+const fila = document.createElement('tr');
+fila.dataset.id = id;
+fila.innerHTML = `
+<td>${id}</td>
+<td>${nombre}</td>
+<td>${fecha}</td>
+<td>${producto}</td>
+<td>${pago}</td>
+<td><button data-id="${id}" class="boton-eliminar">Eliminar</button></td>
+`;
+tabla.appendChild(fila);
+}
+
+// Función para agregar un proveedor VIP a la lista
+function agregarVip(nombre, fecha) {
+const lista = document.querySelector('#lista-vip');
+const item = document.createElement('li');
+item.innerHTML = `${nombre} - <span>${fecha}</span>`;
+lista.appendChild(item);
+}
+
+// Función para actualizar la lista de proveedores VIP
+function actualizarVip() {
+const proveedoresVip = proveedores.filter(proveedor => {
+const fechaIngreso = new Date(proveedor.fecha);
+const hoy = new Date();
+const diferencia = (hoy - fechaIngreso) / (1000 * 60 * 60 * 24);
+return diferencia >= 365;
+});
+const lista = document.querySelector('#lista-vip');
+lista.innerHTML = '';
+proveedoresVip.forEach(proveedor => {
+agregarVip(proveedor.nombre, proveedor.fecha);
+});
+}
+
+// Función para agregar un proveedor
+function agregarProveedor(evento) {
+evento.preventDefault();
+const formulario = evento.target;
+const nombre = formulario.nombre.value;
+const fecha = formulario.fecha.value;
+const producto = formulario.producto.value;
+const pago = formulario.pago.value;
+const id = ++contador;
+const proveedor = { id, nombre, fecha, producto, pago };
+proveedores.push(proveedor);
+agregarFila(id, nombre, fecha, producto, pago);
+actualizarVip();
+formulario.reset();
+}
+
+// Función para eliminar un proveedor
+function eliminarProveedor(evento) {
+if (evento.target.classList.contains('boton-eliminar')) {
+const id = parseInt(evento.target.dataset.id);
+const indice = proveedores.findIndex(proveedor => proveedor.id === id);
+if (indice !== -1) {
+proveedores.splice(indice, 1);
+const fila = evento.target.closest('tr');
+fila.remove();
+actualizarVip();
+}
+}
+}
+
+// Eventos
+const formulario = document.querySelector('#formulario');
+formulario.addEventListener('submit', agregarProveedor);
+
+const tabla = document.querySelector('#tabla');
+tabla.addEventListener('click', eliminarProveedor);
+
+         </script>
 </div>
  <!--Final seccion Cartas-->
 
 
-        <div class="ganancias">
-            <div class="report">
-                <h3>Puntos y Transferencias</h3>
-                <div>
-                    <details>
-                       <h1>$29,422</h1>
-                       <h6 class="success">+3.5%</h6>
-                    </details>
-                    <p class="text-muted">Profit 15% al Mes</p>
-                </div>
-            </div>
-             <!---->
-            <div class="report">
-                <h3>Ganancias</h3>
-                <div>
-                    <details>
-                       <h1>$29,422</h1>
-                       <h6 class="success">+3.5%</h6>
-                    </details>
-                    <p class="text-muted">Profit 15% al Mes</p>
-                </div>
-            </div>
-             <!---->
-            <div class="report">
-                <h3>Gastos</h3>
-                <div>
-                    <details>
-                       <h1>$29,422</h1>
-                       <h6 class="danger">-64.$</h6>
-                    </details>
-                    <p class="text-muted">Gastos Administrativos</p>
-                </div>
-            </div>
-             <!---->
-            <div class="report">
-                <h3>Productos Activos </h3>
-                <div>
-                    <details>
-                       <h1>29,422 Productos</h1>
-                       <h6 class="success">+3.5%</h6>
-                    </details>
-                    <p class="text-muted">Productos en el Inventario</p>
-                </div>
-            </div>
-            
-            
-        </div>
+       
  <!------------------------------------------------------------>
-        <div class="fast-payment">
-            <h2>Pagos Rapidos</h2>
-            <div class="fast">
-                <div class="punto">
-                    <span class="material-icons-sharp">
-                        add
-                        </span>
-                </div>
-                <div class="punto">
-                    <span class="bg-primary"> </span>
-                    <div>
-                        <h5>Puntos De Venta</h5>
-                        <h4>154$</h4>
-                    </div>
-                </div>
-                 
-                <div class="punto">
-                    <span class="bg-danger"> </span>
-                    <div>
-                        <h5>Pagos Proveedores</h5>
-                        <h4>154$</h4>
-                    </div>
-                </div>
-
-                <div class="punto">
-                    <span class="bg-success"> </span>
-                    <div>
-                        <h5>Total Ganancias en $</h5>
-                        <h4>154$</h4>
-                    </div>
-                </div>
-
-                <div class="punto">
-                    <span class="bg-primary"> </span>
-                    <div>
-                        <h5>Total Productos Activos</h5>
-                        <h4>154 c/u</h4>
-                    </div>
-                </div>
-
-                <div class="punto">
-                    <span class="bg-danger"> </span>
-                    <div>
-                        <h5>Gastos Administrativos</h5>
-                        <h4>154$</h4>
-                    </div>
-                </div>
-
-            </div>
-         </div>
+        
           <!--Grafico-->
-          <h1>Ganacias y Gastos</h1>
-          <canvas id="myChart"></canvas>
-          <h1>Productos mas Vendidos</h1>
-          <canvas id="grafico"></canvas>
-          <h1>Pagos Moviles y Transferencia</h1>
-          <canvas id="torta"></canvas>
-          <h1>Puntos de Venta</h1>
-          <canvas id="productos"></canvas>
+         
    
       
      <!-----?=?????========="""!!!!!!!"-->
@@ -356,7 +381,7 @@
 
             <!------Derecha! CONTENIDO!---aaaa-->
 
-        <section class="right">
+       <!--  <section class="right">
        <div class="proveedores">
        <div class="header">
            <h2>Productos Mas Vendidos</h2>
@@ -472,7 +497,7 @@
 
        </div>
 <!----------->
-       <div class="pagos">
+      <!--  <div class="pagos">
         <div class="header">
            <h2>Transferencias Recibidas</h2>
            <a href=""> Mostar Mas </a>
@@ -614,7 +639,7 @@
         <!-----final transferencia------>
        </div>
        <!----------->
-        </section>
+        </section> -->
         <!--TErmina el right-->
        </main>
        <!--------============TErmina el MAIN===============-->
